@@ -17,7 +17,9 @@ return [
         ],
     ],
     'modules'   => [
-
+        'api'   => [
+            'class' => 'app\modules\api\ApiModule'
+        ]
     ],
     'extensions' => require(__DIR__. '/../vendor/yiisoft/extensions.php'),
 ];

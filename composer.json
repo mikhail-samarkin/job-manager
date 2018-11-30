@@ -1,5 +1,6 @@
 {
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "friendsofphp/php-cs-fixer": "^2.13"
     }
 }
