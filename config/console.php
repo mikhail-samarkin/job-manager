@@ -3,6 +3,15 @@ return [
     'id'            => 'job-manager-console',
     'basePath'      => dirname(__DIR__),
     'components'    => [
-        'db'  => require (__DIR__. '/db.php')
-    ]
+        'db'  => require (__DIR__. '/db.php'),
+    ],
+    'controllerMap' => [
+        'migrate' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationPath' => null,
+            'migrationNamespaces' => [
+                'app\common\migrations',
+            ],
+        ],
+    ],
 ];

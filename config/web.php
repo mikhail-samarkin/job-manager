@@ -10,6 +10,9 @@ return [
                 'application/json' => 'yii\web\JsonParser',
             ]
         ],
+        'response' => [
+            'format' => yii\web\Response::FORMAT_JSON,
+        ],
         'db'  => require (__DIR__. '/db.php'),
         'urlManager'    => [
             'enablePrettyUrl'   => true,
@@ -21,5 +24,4 @@ return [
             'class' => 'app\modules\api\ApiModule'
         ]
     ],
-    'extensions' => require(__DIR__. '/../vendor/yiisoft/extensions.php'),
 ];
