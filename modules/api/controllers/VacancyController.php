@@ -1,11 +1,34 @@
 <?php
 namespace app\modules\api\controllers;
 
+use app\common\services\VacancyService;
+use yii\base\Module;
+
 class VacancyController extends \yii\web\Controller
 {
-    public function actionIndex()
+    protected $service;
+
+    public function __construct($id, Module $module, array $config = [], VacancyService $vacancyService)
     {
-        var_dump('1');
-        exit;
+        $this->service = $vacancyService;
+        parent::__construct($id, $module, $config);
+    }
+
+    public function actionAll()
+    {
+        $vacancies = $this->service->getPreparedVacancies();
+        return ['vacancies'  => $vacancies];
+    }
+
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => \yii\filters\VerbFilter::class,
+                'actions' => [
+                    'all'  => ['GET']
+                ],
+            ],
+        ];
     }
 }
