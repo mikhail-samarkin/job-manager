@@ -38,7 +38,8 @@ trait UnitTesterActions
      * @param float  $delta
      * @see \Codeception\Module\Asserts::assertEquals()
      */
-    public function assertEquals($expected, $actual, $message = null, $delta = null) {
+    public function assertEquals($expected, $actual, $message = null, $delta = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertEquals', func_get_args()));
     }
 
@@ -68,7 +69,8 @@ trait UnitTesterActions
      * @param float  $delta
      * @see \Codeception\Module\Asserts::assertNotEquals()
      */
-    public function assertNotEquals($expected, $actual, $message = null, $delta = null) {
+    public function assertNotEquals($expected, $actual, $message = null, $delta = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotEquals', func_get_args()));
     }
 
@@ -83,7 +85,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertSame()
      */
-    public function assertSame($expected, $actual, $message = null) {
+    public function assertSame($expected, $actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertSame', func_get_args()));
     }
 
@@ -98,7 +101,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotSame()
      */
-    public function assertNotSame($expected, $actual, $message = null) {
+    public function assertNotSame($expected, $actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotSame', func_get_args()));
     }
 
@@ -113,7 +117,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertGreaterThan()
      */
-    public function assertGreaterThan($expected, $actual, $message = null) {
+    public function assertGreaterThan($expected, $actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertGreaterThan', func_get_args()));
     }
 
@@ -128,7 +133,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertGreaterThanOrEqual()
      */
-    public function assertGreaterThanOrEqual($expected, $actual, $message = null) {
+    public function assertGreaterThanOrEqual($expected, $actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertGreaterThanOrEqual', func_get_args()));
     }
 
@@ -143,7 +149,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertLessThan()
      */
-    public function assertLessThan($expected, $actual, $message = null) {
+    public function assertLessThan($expected, $actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertLessThan', func_get_args()));
     }
 
@@ -158,7 +165,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertLessThanOrEqual()
      */
-    public function assertLessThanOrEqual($expected, $actual, $message = null) {
+    public function assertLessThanOrEqual($expected, $actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertLessThanOrEqual', func_get_args()));
     }
 
@@ -173,7 +181,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertContains()
      */
-    public function assertContains($needle, $haystack, $message = null) {
+    public function assertContains($needle, $haystack, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertContains', func_get_args()));
     }
 
@@ -188,7 +197,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotContains()
      */
-    public function assertNotContains($needle, $haystack, $message = null) {
+    public function assertNotContains($needle, $haystack, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotContains', func_get_args()));
     }
 
@@ -203,7 +213,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertRegExp()
      */
-    public function assertRegExp($pattern, $string, $message = null) {
+    public function assertRegExp($pattern, $string, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertRegExp', func_get_args()));
     }
 
@@ -218,7 +229,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotRegExp()
      */
-    public function assertNotRegExp($pattern, $string, $message = null) {
+    public function assertNotRegExp($pattern, $string, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotRegExp', func_get_args()));
     }
 
@@ -233,7 +245,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertStringStartsWith()
      */
-    public function assertStringStartsWith($prefix, $string, $message = null) {
+    public function assertStringStartsWith($prefix, $string, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertStringStartsWith', func_get_args()));
     }
 
@@ -248,7 +261,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertStringStartsNotWith()
      */
-    public function assertStringStartsNotWith($prefix, $string, $message = null) {
+    public function assertStringStartsNotWith($prefix, $string, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertStringStartsNotWith', func_get_args()));
     }
 
@@ -262,7 +276,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertEmpty()
      */
-    public function assertEmpty($actual, $message = null) {
+    public function assertEmpty($actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertEmpty', func_get_args()));
     }
 
@@ -276,7 +291,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotEmpty()
      */
-    public function assertNotEmpty($actual, $message = null) {
+    public function assertNotEmpty($actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotEmpty', func_get_args()));
     }
 
@@ -290,7 +306,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNull()
      */
-    public function assertNull($actual, $message = null) {
+    public function assertNull($actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNull', func_get_args()));
     }
 
@@ -304,7 +321,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotNull()
      */
-    public function assertNotNull($actual, $message = null) {
+    public function assertNotNull($actual, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotNull', func_get_args()));
     }
 
@@ -318,7 +336,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertTrue()
      */
-    public function assertTrue($condition, $message = null) {
+    public function assertTrue($condition, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertTrue', func_get_args()));
     }
 
@@ -332,7 +351,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotTrue()
      */
-    public function assertNotTrue($condition, $message = null) {
+    public function assertNotTrue($condition, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotTrue', func_get_args()));
     }
 
@@ -346,7 +366,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertFalse()
      */
-    public function assertFalse($condition, $message = null) {
+    public function assertFalse($condition, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertFalse', func_get_args()));
     }
 
@@ -360,7 +381,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertNotFalse()
      */
-    public function assertNotFalse($condition, $message = null) {
+    public function assertNotFalse($condition, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotFalse', func_get_args()));
     }
 
@@ -374,7 +396,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertFileExists()
      */
-    public function assertFileExists($filename, $message = null) {
+    public function assertFileExists($filename, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertFileExists', func_get_args()));
     }
 
@@ -388,7 +411,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertFileNotExists()
      */
-    public function assertFileNotExists($filename, $message = null) {
+    public function assertFileNotExists($filename, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertFileNotExists', func_get_args()));
     }
 
@@ -401,7 +425,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertGreaterOrEquals()
      */
-    public function assertGreaterOrEquals($expected, $actual, $description = null) {
+    public function assertGreaterOrEquals($expected, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertGreaterOrEquals', func_get_args()));
     }
 
@@ -414,7 +439,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertLessOrEquals()
      */
-    public function assertLessOrEquals($expected, $actual, $description = null) {
+    public function assertLessOrEquals($expected, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertLessOrEquals', func_get_args()));
     }
 
@@ -426,7 +452,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertIsEmpty()
      */
-    public function assertIsEmpty($actual, $description = null) {
+    public function assertIsEmpty($actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertIsEmpty', func_get_args()));
     }
 
@@ -439,7 +466,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertArrayHasKey()
      */
-    public function assertArrayHasKey($key, $actual, $description = null) {
+    public function assertArrayHasKey($key, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertArrayHasKey', func_get_args()));
     }
 
@@ -452,7 +480,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertArrayNotHasKey()
      */
-    public function assertArrayNotHasKey($key, $actual, $description = null) {
+    public function assertArrayNotHasKey($key, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertArrayNotHasKey', func_get_args()));
     }
 
@@ -468,7 +497,8 @@ trait UnitTesterActions
      * @param string $message
      * @see \Codeception\Module\Asserts::assertArraySubset()
      */
-    public function assertArraySubset($subset, $array, $strict = null, $message = null) {
+    public function assertArraySubset($subset, $array, $strict = null, $message = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertArraySubset', func_get_args()));
     }
 
@@ -481,7 +511,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertCount()
      */
-    public function assertCount($expectedCount, $actual, $description = null) {
+    public function assertCount($expectedCount, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertCount', func_get_args()));
     }
 
@@ -494,7 +525,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertInstanceOf()
      */
-    public function assertInstanceOf($class, $actual, $description = null) {
+    public function assertInstanceOf($class, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertInstanceOf', func_get_args()));
     }
 
@@ -507,7 +539,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertNotInstanceOf()
      */
-    public function assertNotInstanceOf($class, $actual, $description = null) {
+    public function assertNotInstanceOf($class, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertNotInstanceOf', func_get_args()));
     }
 
@@ -520,7 +553,8 @@ trait UnitTesterActions
      * @param $description
      * @see \Codeception\Module\Asserts::assertInternalType()
      */
-    public function assertInternalType($type, $actual, $description = null) {
+    public function assertInternalType($type, $actual, $description = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('assertInternalType', func_get_args()));
     }
 
@@ -533,7 +567,8 @@ trait UnitTesterActions
      * @param $message
      * @see \Codeception\Module\Asserts::fail()
      */
-    public function fail($message) {
+    public function fail($message)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('fail', func_get_args()));
     }
 
@@ -569,7 +604,8 @@ trait UnitTesterActions
      * @deprecated Use expectThrowable instead
      * @see \Codeception\Module\Asserts::expectException()
      */
-    public function expectException($exception, $callback) {
+    public function expectException($exception, $callback)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('expectException', func_get_args()));
     }
 
@@ -603,7 +639,8 @@ trait UnitTesterActions
      * @param $callback
      * @see \Codeception\Module\Asserts::expectThrowable()
      */
-    public function expectThrowable($throwable, $callback) {
+    public function expectThrowable($throwable, $callback)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('expectThrowable', func_get_args()));
     }
 
@@ -645,7 +682,8 @@ trait UnitTesterActions
      * @part fixtures
      * @see \Codeception\Module\Yii2::haveFixtures()
      */
-    public function haveFixtures($fixtures) {
+    public function haveFixtures($fixtures)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('haveFixtures', func_get_args()));
     }
 
@@ -660,7 +698,8 @@ trait UnitTesterActions
      * @return array
      * @see \Codeception\Module\Yii2::grabFixtures()
      */
-    public function grabFixtures() {
+    public function grabFixtures()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabFixtures', func_get_args()));
     }
 
@@ -688,7 +727,8 @@ trait UnitTesterActions
      * @part fixtures
      * @see \Codeception\Module\Yii2::grabFixture()
      */
-    public function grabFixture($name, $index = null) {
+    public function grabFixture($name, $index = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabFixture', func_get_args()));
     }
 
@@ -710,7 +750,8 @@ trait UnitTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::haveRecord()
      */
-    public function haveRecord($model, $attributes = null) {
+    public function haveRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('haveRecord', func_get_args()));
     }
 
@@ -730,7 +771,8 @@ trait UnitTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::seeRecord()
      */
-    public function canSeeRecord($model, $attributes = null) {
+    public function canSeeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeRecord', func_get_args()));
     }
     /**
@@ -747,7 +789,8 @@ trait UnitTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::seeRecord()
      */
-    public function seeRecord($model, $attributes = null) {
+    public function seeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeRecord', func_get_args()));
     }
 
@@ -767,7 +810,8 @@ trait UnitTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::dontSeeRecord()
      */
-    public function cantSeeRecord($model, $attributes = null) {
+    public function cantSeeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeRecord', func_get_args()));
     }
     /**
@@ -784,7 +828,8 @@ trait UnitTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::dontSeeRecord()
      */
-    public function dontSeeRecord($model, $attributes = null) {
+    public function dontSeeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeRecord', func_get_args()));
     }
 
@@ -804,7 +849,8 @@ trait UnitTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::grabRecord()
      */
-    public function grabRecord($model, $attributes = null) {
+    public function grabRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabRecord', func_get_args()));
     }
 
@@ -829,7 +875,8 @@ trait UnitTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::seeEmailIsSent()
      */
-    public function canSeeEmailIsSent($num = null) {
+    public function canSeeEmailIsSent($num = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeEmailIsSent', func_get_args()));
     }
     /**
@@ -851,7 +898,8 @@ trait UnitTesterActions
      * @part email
      * @see \Codeception\Module\Yii2::seeEmailIsSent()
      */
-    public function seeEmailIsSent($num = null) {
+    public function seeEmailIsSent($num = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeEmailIsSent', func_get_args()));
     }
 
@@ -865,7 +913,8 @@ trait UnitTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::dontSeeEmailIsSent()
      */
-    public function cantSeeEmailIsSent() {
+    public function cantSeeEmailIsSent()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeEmailIsSent', func_get_args()));
     }
     /**
@@ -876,7 +925,8 @@ trait UnitTesterActions
      * @part email
      * @see \Codeception\Module\Yii2::dontSeeEmailIsSent()
      */
-    public function dontSeeEmailIsSent() {
+    public function dontSeeEmailIsSent()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeEmailIsSent', func_get_args()));
     }
 
@@ -900,7 +950,8 @@ trait UnitTesterActions
      * @throws ModuleException
      * @see \Codeception\Module\Yii2::grabSentEmails()
      */
-    public function grabSentEmails() {
+    public function grabSentEmails()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabSentEmails', func_get_args()));
     }
 
@@ -919,7 +970,8 @@ trait UnitTesterActions
      * @part email
      * @see \Codeception\Module\Yii2::grabLastSentEmail()
      */
-    public function grabLastSentEmail() {
+    public function grabLastSentEmail()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabLastSentEmail', func_get_args()));
     }
 }

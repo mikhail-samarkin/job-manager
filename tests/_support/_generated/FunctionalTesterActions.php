@@ -34,7 +34,8 @@ trait FunctionalTesterActions
      * @throws ModuleException
      * @see \Codeception\Module\Yii2::amLoggedInAs()
      */
-    public function amLoggedInAs($user) {
+    public function amLoggedInAs($user)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Condition('amLoggedInAs', func_get_args()));
     }
 
@@ -76,7 +77,8 @@ trait FunctionalTesterActions
      * @part fixtures
      * @see \Codeception\Module\Yii2::haveFixtures()
      */
-    public function haveFixtures($fixtures) {
+    public function haveFixtures($fixtures)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('haveFixtures', func_get_args()));
     }
 
@@ -91,7 +93,8 @@ trait FunctionalTesterActions
      * @return array
      * @see \Codeception\Module\Yii2::grabFixtures()
      */
-    public function grabFixtures() {
+    public function grabFixtures()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabFixtures', func_get_args()));
     }
 
@@ -119,7 +122,8 @@ trait FunctionalTesterActions
      * @part fixtures
      * @see \Codeception\Module\Yii2::grabFixture()
      */
-    public function grabFixture($name, $index = null) {
+    public function grabFixture($name, $index = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabFixture', func_get_args()));
     }
 
@@ -141,7 +145,8 @@ trait FunctionalTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::haveRecord()
      */
-    public function haveRecord($model, $attributes = null) {
+    public function haveRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('haveRecord', func_get_args()));
     }
 
@@ -161,7 +166,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::seeRecord()
      */
-    public function canSeeRecord($model, $attributes = null) {
+    public function canSeeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeRecord', func_get_args()));
     }
     /**
@@ -178,7 +184,8 @@ trait FunctionalTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::seeRecord()
      */
-    public function seeRecord($model, $attributes = null) {
+    public function seeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeRecord', func_get_args()));
     }
 
@@ -198,7 +205,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::dontSeeRecord()
      */
-    public function cantSeeRecord($model, $attributes = null) {
+    public function cantSeeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeRecord', func_get_args()));
     }
     /**
@@ -215,7 +223,8 @@ trait FunctionalTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::dontSeeRecord()
      */
-    public function dontSeeRecord($model, $attributes = null) {
+    public function dontSeeRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeRecord', func_get_args()));
     }
 
@@ -235,7 +244,8 @@ trait FunctionalTesterActions
      * @part orm
      * @see \Codeception\Module\Yii2::grabRecord()
      */
-    public function grabRecord($model, $attributes = null) {
+    public function grabRecord($model, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabRecord', func_get_args()));
     }
 
@@ -251,7 +261,8 @@ trait FunctionalTesterActions
      *
      * @see \Codeception\Module\Yii2::amOnRoute()
      */
-    public function amOnRoute($route, $params = null) {
+    public function amOnRoute($route, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Condition('amOnRoute', func_get_args()));
     }
 
@@ -272,7 +283,8 @@ trait FunctionalTesterActions
      * @deprecated in your tests you can use \Yii::$app directly.
      * @see \Codeception\Module\Yii2::grabComponent()
      */
-    public function grabComponent($component) {
+    public function grabComponent($component)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabComponent', func_get_args()));
     }
 
@@ -297,7 +309,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::seeEmailIsSent()
      */
-    public function canSeeEmailIsSent($num = null) {
+    public function canSeeEmailIsSent($num = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeEmailIsSent', func_get_args()));
     }
     /**
@@ -319,7 +332,8 @@ trait FunctionalTesterActions
      * @part email
      * @see \Codeception\Module\Yii2::seeEmailIsSent()
      */
-    public function seeEmailIsSent($num = null) {
+    public function seeEmailIsSent($num = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeEmailIsSent', func_get_args()));
     }
 
@@ -333,7 +347,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Yii2::dontSeeEmailIsSent()
      */
-    public function cantSeeEmailIsSent() {
+    public function cantSeeEmailIsSent()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeEmailIsSent', func_get_args()));
     }
     /**
@@ -344,7 +359,8 @@ trait FunctionalTesterActions
      * @part email
      * @see \Codeception\Module\Yii2::dontSeeEmailIsSent()
      */
-    public function dontSeeEmailIsSent() {
+    public function dontSeeEmailIsSent()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeEmailIsSent', func_get_args()));
     }
 
@@ -368,7 +384,8 @@ trait FunctionalTesterActions
      * @throws ModuleException
      * @see \Codeception\Module\Yii2::grabSentEmails()
      */
-    public function grabSentEmails() {
+    public function grabSentEmails()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabSentEmails', func_get_args()));
     }
 
@@ -387,7 +404,8 @@ trait FunctionalTesterActions
      * @part email
      * @see \Codeception\Module\Yii2::grabLastSentEmail()
      */
-    public function grabLastSentEmail() {
+    public function grabLastSentEmail()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabLastSentEmail', func_get_args()));
     }
 
@@ -400,7 +418,8 @@ trait FunctionalTesterActions
      * @return array
      * @see \Codeception\Module\Yii2::getInternalDomains()
      */
-    public function getInternalDomains() {
+    public function getInternalDomains()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('getInternalDomains', func_get_args()));
     }
 
@@ -414,7 +433,8 @@ trait FunctionalTesterActions
      * @param array $params Additional cookie params like `domain`, `path`, `expires` and `secure`.
      * @see \Codeception\Module\Yii2::setCookie()
      */
-    public function setCookie($name, $val, $params = null) {
+    public function setCookie($name, $val, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('setCookie', func_get_args()));
     }
 
@@ -427,7 +447,8 @@ trait FunctionalTesterActions
      * @return string[] Returns an array containing the name of the CSRF param and the masked CSRF token.
      * @see \Codeception\Module\Yii2::createAndSetCsrfCookie()
      */
-    public function createAndSetCsrfCookie($val) {
+    public function createAndSetCsrfCookie($val)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('createAndSetCsrfCookie', func_get_args()));
     }
 
@@ -441,7 +462,8 @@ trait FunctionalTesterActions
      * @param $password
      * @see \Codeception\Lib\InnerBrowser::amHttpAuthenticated()
      */
-    public function amHttpAuthenticated($username, $password) {
+    public function amHttpAuthenticated($username, $password)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Condition('amHttpAuthenticated', func_get_args()));
     }
 
@@ -476,7 +498,8 @@ trait FunctionalTesterActions
      *        requests
      * @see \Codeception\Lib\InnerBrowser::haveHttpHeader()
      */
-    public function haveHttpHeader($name, $value) {
+    public function haveHttpHeader($name, $value)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('haveHttpHeader', func_get_args()));
     }
 
@@ -501,7 +524,8 @@ trait FunctionalTesterActions
      * @param string $name the name of the header to delete.
      * @see \Codeception\Lib\InnerBrowser::deleteHeader()
      */
-    public function deleteHeader($name) {
+    public function deleteHeader($name)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('deleteHeader', func_get_args()));
     }
 
@@ -522,7 +546,8 @@ trait FunctionalTesterActions
      * @param string $page
      * @see \Codeception\Lib\InnerBrowser::amOnPage()
      */
-    public function amOnPage($page) {
+    public function amOnPage($page)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Condition('amOnPage', func_get_args()));
     }
 
@@ -561,7 +586,8 @@ trait FunctionalTesterActions
      * @param $context
      * @see \Codeception\Lib\InnerBrowser::click()
      */
-    public function click($link, $context = null) {
+    public function click($link, $context = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('click', func_get_args()));
     }
 
@@ -601,7 +627,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::see()
      */
-    public function canSee($text, $selector = null) {
+    public function canSee($text, $selector = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('see', func_get_args()));
     }
     /**
@@ -638,7 +665,8 @@ trait FunctionalTesterActions
      * @param string $selector optional
      * @see \Codeception\Lib\InnerBrowser::see()
      */
-    public function see($text, $selector = null) {
+    public function see($text, $selector = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('see', func_get_args()));
     }
 
@@ -676,7 +704,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
-    public function cantSee($text, $selector = null) {
+    public function cantSee($text, $selector = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSee', func_get_args()));
     }
     /**
@@ -711,7 +740,8 @@ trait FunctionalTesterActions
      * @param string $selector optional
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
-    public function dontSee($text, $selector = null) {
+    public function dontSee($text, $selector = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSee', func_get_args()));
     }
 
@@ -731,7 +761,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInSource()
      */
-    public function canSeeInSource($raw) {
+    public function canSeeInSource($raw)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeInSource', func_get_args()));
     }
     /**
@@ -748,7 +779,8 @@ trait FunctionalTesterActions
      * @param      $raw
      * @see \Codeception\Lib\InnerBrowser::seeInSource()
      */
-    public function seeInSource($raw) {
+    public function seeInSource($raw)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeInSource', func_get_args()));
     }
 
@@ -768,7 +800,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInSource()
      */
-    public function cantSeeInSource($raw) {
+    public function cantSeeInSource($raw)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeInSource', func_get_args()));
     }
     /**
@@ -785,7 +818,8 @@ trait FunctionalTesterActions
      * @param      $raw
      * @see \Codeception\Lib\InnerBrowser::dontSeeInSource()
      */
-    public function dontSeeInSource($raw) {
+    public function dontSeeInSource($raw)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeInSource', func_get_args()));
     }
 
@@ -808,7 +842,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
-    public function canSeeLink($text, $url = null) {
+    public function canSeeLink($text, $url = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeLink', func_get_args()));
     }
     /**
@@ -828,7 +863,8 @@ trait FunctionalTesterActions
      * @param string $url optional
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
-    public function seeLink($text, $url = null) {
+    public function seeLink($text, $url = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeLink', func_get_args()));
     }
 
@@ -851,7 +887,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
-    public function cantSeeLink($text, $url = null) {
+    public function cantSeeLink($text, $url = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeLink', func_get_args()));
     }
     /**
@@ -871,7 +908,8 @@ trait FunctionalTesterActions
      * @param string $url optional
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
-    public function dontSeeLink($text, $url = null) {
+    public function dontSeeLink($text, $url = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeLink', func_get_args()));
     }
 
@@ -894,7 +932,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
-    public function canSeeInCurrentUrl($uri) {
+    public function canSeeInCurrentUrl($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeInCurrentUrl', func_get_args()));
     }
     /**
@@ -914,7 +953,8 @@ trait FunctionalTesterActions
      * @param string $uri
      * @see \Codeception\Lib\InnerBrowser::seeInCurrentUrl()
      */
-    public function seeInCurrentUrl($uri) {
+    public function seeInCurrentUrl($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeInCurrentUrl', func_get_args()));
     }
 
@@ -934,7 +974,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
-    public function cantSeeInCurrentUrl($uri) {
+    public function cantSeeInCurrentUrl($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeInCurrentUrl', func_get_args()));
     }
     /**
@@ -951,7 +992,8 @@ trait FunctionalTesterActions
      * @param string $uri
      * @see \Codeception\Lib\InnerBrowser::dontSeeInCurrentUrl()
      */
-    public function dontSeeInCurrentUrl($uri) {
+    public function dontSeeInCurrentUrl($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeInCurrentUrl', func_get_args()));
     }
 
@@ -973,7 +1015,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
-    public function canSeeCurrentUrlEquals($uri) {
+    public function canSeeCurrentUrlEquals($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeCurrentUrlEquals', func_get_args()));
     }
     /**
@@ -992,7 +1035,8 @@ trait FunctionalTesterActions
      * @param string $uri
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlEquals()
      */
-    public function seeCurrentUrlEquals($uri) {
+    public function seeCurrentUrlEquals($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeCurrentUrlEquals', func_get_args()));
     }
 
@@ -1014,7 +1058,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
-    public function cantSeeCurrentUrlEquals($uri) {
+    public function cantSeeCurrentUrlEquals($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeCurrentUrlEquals', func_get_args()));
     }
     /**
@@ -1033,7 +1078,8 @@ trait FunctionalTesterActions
      * @param string $uri
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlEquals()
      */
-    public function dontSeeCurrentUrlEquals($uri) {
+    public function dontSeeCurrentUrlEquals($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeCurrentUrlEquals', func_get_args()));
     }
 
@@ -1054,7 +1100,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
-    public function canSeeCurrentUrlMatches($uri) {
+    public function canSeeCurrentUrlMatches($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeCurrentUrlMatches', func_get_args()));
     }
     /**
@@ -1072,7 +1119,8 @@ trait FunctionalTesterActions
      * @param string $uri
      * @see \Codeception\Lib\InnerBrowser::seeCurrentUrlMatches()
      */
-    public function seeCurrentUrlMatches($uri) {
+    public function seeCurrentUrlMatches($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeCurrentUrlMatches', func_get_args()));
     }
 
@@ -1093,7 +1141,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
-    public function cantSeeCurrentUrlMatches($uri) {
+    public function cantSeeCurrentUrlMatches($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeCurrentUrlMatches', func_get_args()));
     }
     /**
@@ -1111,7 +1160,8 @@ trait FunctionalTesterActions
      * @param string $uri
      * @see \Codeception\Lib\InnerBrowser::dontSeeCurrentUrlMatches()
      */
-    public function dontSeeCurrentUrlMatches($uri) {
+    public function dontSeeCurrentUrlMatches($uri)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeCurrentUrlMatches', func_get_args()));
     }
 
@@ -1134,7 +1184,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::grabFromCurrentUrl()
      */
-    public function grabFromCurrentUrl($uri = null) {
+    public function grabFromCurrentUrl($uri = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabFromCurrentUrl', func_get_args()));
     }
 
@@ -1156,7 +1207,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
-    public function canSeeCheckboxIsChecked($checkbox) {
+    public function canSeeCheckboxIsChecked($checkbox)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeCheckboxIsChecked', func_get_args()));
     }
     /**
@@ -1175,7 +1227,8 @@ trait FunctionalTesterActions
      * @param $checkbox
      * @see \Codeception\Lib\InnerBrowser::seeCheckboxIsChecked()
      */
-    public function seeCheckboxIsChecked($checkbox) {
+    public function seeCheckboxIsChecked($checkbox)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeCheckboxIsChecked', func_get_args()));
     }
 
@@ -1196,7 +1249,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
-    public function cantSeeCheckboxIsChecked($checkbox) {
+    public function cantSeeCheckboxIsChecked($checkbox)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeCheckboxIsChecked', func_get_args()));
     }
     /**
@@ -1214,7 +1268,8 @@ trait FunctionalTesterActions
      * @param $checkbox
      * @see \Codeception\Lib\InnerBrowser::dontSeeCheckboxIsChecked()
      */
-    public function dontSeeCheckboxIsChecked($checkbox) {
+    public function dontSeeCheckboxIsChecked($checkbox)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeCheckboxIsChecked', func_get_args()));
     }
 
@@ -1241,7 +1296,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
-    public function canSeeInField($field, $value) {
+    public function canSeeInField($field, $value)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeInField', func_get_args()));
     }
     /**
@@ -1265,7 +1321,8 @@ trait FunctionalTesterActions
      * @param $value
      * @see \Codeception\Lib\InnerBrowser::seeInField()
      */
-    public function seeInField($field, $value) {
+    public function seeInField($field, $value)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeInField', func_get_args()));
     }
 
@@ -1292,7 +1349,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
-    public function cantSeeInField($field, $value) {
+    public function cantSeeInField($field, $value)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeInField', func_get_args()));
     }
     /**
@@ -1316,7 +1374,8 @@ trait FunctionalTesterActions
      * @param $value
      * @see \Codeception\Lib\InnerBrowser::dontSeeInField()
      */
-    public function dontSeeInField($field, $value) {
+    public function dontSeeInField($field, $value)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeInField', func_get_args()));
     }
 
@@ -1386,7 +1445,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInFormFields()
      */
-    public function canSeeInFormFields($formSelector, $params) {
+    public function canSeeInFormFields($formSelector, $params)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeInFormFields', func_get_args()));
     }
     /**
@@ -1453,7 +1513,8 @@ trait FunctionalTesterActions
      * @param $params
      * @see \Codeception\Lib\InnerBrowser::seeInFormFields()
      */
-    public function seeInFormFields($formSelector, $params) {
+    public function seeInFormFields($formSelector, $params)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeInFormFields', func_get_args()));
     }
 
@@ -1503,7 +1564,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInFormFields()
      */
-    public function cantSeeInFormFields($formSelector, $params) {
+    public function cantSeeInFormFields($formSelector, $params)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeInFormFields', func_get_args()));
     }
     /**
@@ -1550,7 +1612,8 @@ trait FunctionalTesterActions
      * @param $params
      * @see \Codeception\Lib\InnerBrowser::dontSeeInFormFields()
      */
-    public function dontSeeInFormFields($formSelector, $params) {
+    public function dontSeeInFormFields($formSelector, $params)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeInFormFields', func_get_args()));
     }
 
@@ -1729,7 +1792,8 @@ trait FunctionalTesterActions
      * @param $button
      * @see \Codeception\Lib\InnerBrowser::submitForm()
      */
-    public function submitForm($selector, $params, $button = null) {
+    public function submitForm($selector, $params, $button = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('submitForm', func_get_args()));
     }
 
@@ -1750,7 +1814,8 @@ trait FunctionalTesterActions
      * @param $value
      * @see \Codeception\Lib\InnerBrowser::fillField()
      */
-    public function fillField($field, $value) {
+    public function fillField($field, $value)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('fillField', func_get_args()));
     }
 
@@ -1789,7 +1854,8 @@ trait FunctionalTesterActions
      * @param $option
      * @see \Codeception\Lib\InnerBrowser::selectOption()
      */
-    public function selectOption($select, $option) {
+    public function selectOption($select, $option)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('selectOption', func_get_args()));
     }
 
@@ -1808,7 +1874,8 @@ trait FunctionalTesterActions
      * @param $option
      * @see \Codeception\Lib\InnerBrowser::checkOption()
      */
-    public function checkOption($option) {
+    public function checkOption($option)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('checkOption', func_get_args()));
     }
 
@@ -1827,7 +1894,8 @@ trait FunctionalTesterActions
      * @param $option
      * @see \Codeception\Lib\InnerBrowser::uncheckOption()
      */
-    public function uncheckOption($option) {
+    public function uncheckOption($option)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('uncheckOption', func_get_args()));
     }
 
@@ -1848,7 +1916,8 @@ trait FunctionalTesterActions
      * @param $filename
      * @see \Codeception\Lib\InnerBrowser::attachFile()
      */
-    public function attachFile($field, $filename) {
+    public function attachFile($field, $filename)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('attachFile', func_get_args()));
     }
 
@@ -1865,7 +1934,8 @@ trait FunctionalTesterActions
      * @param $params
      * @see \Codeception\Lib\InnerBrowser::sendAjaxGetRequest()
      */
-    public function sendAjaxGetRequest($uri, $params = null) {
+    public function sendAjaxGetRequest($uri, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('sendAjaxGetRequest', func_get_args()));
     }
 
@@ -1893,7 +1963,8 @@ trait FunctionalTesterActions
      * @param $params
      * @see \Codeception\Lib\InnerBrowser::sendAjaxPostRequest()
      */
-    public function sendAjaxPostRequest($uri, $params = null) {
+    public function sendAjaxPostRequest($uri, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('sendAjaxPostRequest', func_get_args()));
     }
 
@@ -1919,7 +1990,8 @@ trait FunctionalTesterActions
      * @param $params
      * @see \Codeception\Lib\InnerBrowser::sendAjaxRequest()
      */
-    public function sendAjaxRequest($method, $uri, $params = null) {
+    public function sendAjaxRequest($method, $uri, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('sendAjaxRequest', func_get_args()));
     }
 
@@ -1944,7 +2016,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::grabTextFrom()
      */
-    public function grabTextFrom($cssOrXPathOrRegex) {
+    public function grabTextFrom($cssOrXPathOrRegex)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabTextFrom', func_get_args()));
     }
 
@@ -1968,7 +2041,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::grabAttributeFrom()
      */
-    public function grabAttributeFrom($cssOrXpath, $attribute) {
+    public function grabAttributeFrom($cssOrXpath, $attribute)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabAttributeFrom', func_get_args()));
     }
 
@@ -2000,7 +2074,8 @@ trait FunctionalTesterActions
      * @return string[]
      * @see \Codeception\Lib\InnerBrowser::grabMultiple()
      */
-    public function grabMultiple($cssOrXpath, $attribute = null) {
+    public function grabMultiple($cssOrXpath, $attribute = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabMultiple', func_get_args()));
     }
 
@@ -2013,7 +2088,8 @@ trait FunctionalTesterActions
      * @return array|mixed|null|string
      * @see \Codeception\Lib\InnerBrowser::grabValueFrom()
      */
-    public function grabValueFrom($field) {
+    public function grabValueFrom($field)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabValueFrom', func_get_args()));
     }
 
@@ -2030,7 +2106,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::grabCookie()
      */
-    public function grabCookie($cookie, $params = null) {
+    public function grabCookie($cookie, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabCookie', func_get_args()));
     }
 
@@ -2045,7 +2122,8 @@ trait FunctionalTesterActions
      * @return string Current page source code.
      * @see \Codeception\Lib\InnerBrowser::grabPageSource()
      */
-    public function grabPageSource() {
+    public function grabPageSource()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('grabPageSource', func_get_args()));
     }
 
@@ -2068,7 +2146,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
-    public function canSeeCookie($cookie, $params = null) {
+    public function canSeeCookie($cookie, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeCookie', func_get_args()));
     }
     /**
@@ -2088,7 +2167,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
-    public function seeCookie($cookie, $params = null) {
+    public function seeCookie($cookie, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeCookie', func_get_args()));
     }
 
@@ -2106,7 +2186,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
-    public function cantSeeCookie($cookie, $params = null) {
+    public function cantSeeCookie($cookie, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeCookie', func_get_args()));
     }
     /**
@@ -2121,7 +2202,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
-    public function dontSeeCookie($cookie, $params = null) {
+    public function dontSeeCookie($cookie, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeCookie', func_get_args()));
     }
 
@@ -2138,7 +2220,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::resetCookie()
      */
-    public function resetCookie($name, $params = null) {
+    public function resetCookie($name, $params = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('resetCookie', func_get_args()));
     }
 
@@ -2167,7 +2250,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
-    public function canSeeElement($selector, $attributes = null) {
+    public function canSeeElement($selector, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeElement', func_get_args()));
     }
     /**
@@ -2193,7 +2277,8 @@ trait FunctionalTesterActions
      * @return
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
-    public function seeElement($selector, $attributes = null) {
+    public function seeElement($selector, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeElement', func_get_args()));
     }
 
@@ -2218,7 +2303,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
-    public function cantSeeElement($selector, $attributes = null) {
+    public function cantSeeElement($selector, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeElement', func_get_args()));
     }
     /**
@@ -2240,7 +2326,8 @@ trait FunctionalTesterActions
      * @param array $attributes
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
-    public function dontSeeElement($selector, $attributes = null) {
+    public function dontSeeElement($selector, $attributes = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeElement', func_get_args()));
     }
 
@@ -2261,7 +2348,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
-    public function canSeeNumberOfElements($selector, $expected) {
+    public function canSeeNumberOfElements($selector, $expected)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeNumberOfElements', func_get_args()));
     }
     /**
@@ -2279,7 +2367,8 @@ trait FunctionalTesterActions
      * @param mixed $expected int or int[]
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
-    public function seeNumberOfElements($selector, $expected) {
+    public function seeNumberOfElements($selector, $expected)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeNumberOfElements', func_get_args()));
     }
 
@@ -2302,7 +2391,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
-    public function canSeeOptionIsSelected($selector, $optionText) {
+    public function canSeeOptionIsSelected($selector, $optionText)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeOptionIsSelected', func_get_args()));
     }
     /**
@@ -2322,7 +2412,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
-    public function seeOptionIsSelected($selector, $optionText) {
+    public function seeOptionIsSelected($selector, $optionText)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeOptionIsSelected', func_get_args()));
     }
 
@@ -2345,7 +2436,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
-    public function cantSeeOptionIsSelected($selector, $optionText) {
+    public function cantSeeOptionIsSelected($selector, $optionText)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeOptionIsSelected', func_get_args()));
     }
     /**
@@ -2365,7 +2457,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
-    public function dontSeeOptionIsSelected($selector, $optionText) {
+    public function dontSeeOptionIsSelected($selector, $optionText)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeOptionIsSelected', func_get_args()));
     }
 
@@ -2377,7 +2470,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
-    public function canSeePageNotFound() {
+    public function canSeePageNotFound()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seePageNotFound', func_get_args()));
     }
     /**
@@ -2386,7 +2480,8 @@ trait FunctionalTesterActions
      * Asserts that current page has 404 response status code.
      * @see \Codeception\Lib\InnerBrowser::seePageNotFound()
      */
-    public function seePageNotFound() {
+    public function seePageNotFound()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seePageNotFound', func_get_args()));
     }
 
@@ -2408,7 +2503,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
-    public function canSeeResponseCodeIs($code) {
+    public function canSeeResponseCodeIs($code)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeResponseCodeIs', func_get_args()));
     }
     /**
@@ -2427,7 +2523,8 @@ trait FunctionalTesterActions
      * @param $code
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
-    public function seeResponseCodeIs($code) {
+    public function seeResponseCodeIs($code)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeResponseCodeIs', func_get_args()));
     }
 
@@ -2442,7 +2539,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsBetween()
      */
-    public function canSeeResponseCodeIsBetween($from, $to) {
+    public function canSeeResponseCodeIsBetween($from, $to)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeResponseCodeIsBetween', func_get_args()));
     }
     /**
@@ -2454,7 +2552,8 @@ trait FunctionalTesterActions
      * @param $to
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsBetween()
      */
-    public function seeResponseCodeIsBetween($from, $to) {
+    public function seeResponseCodeIsBetween($from, $to)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeResponseCodeIsBetween', func_get_args()));
     }
 
@@ -2475,7 +2574,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeResponseCodeIs()
      */
-    public function cantSeeResponseCodeIs($code) {
+    public function cantSeeResponseCodeIs($code)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeResponseCodeIs', func_get_args()));
     }
     /**
@@ -2493,7 +2593,8 @@ trait FunctionalTesterActions
      * @param $code
      * @see \Codeception\Lib\InnerBrowser::dontSeeResponseCodeIs()
      */
-    public function dontSeeResponseCodeIs($code) {
+    public function dontSeeResponseCodeIs($code)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeResponseCodeIs', func_get_args()));
     }
 
@@ -2505,7 +2606,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsSuccessful()
      */
-    public function canSeeResponseCodeIsSuccessful() {
+    public function canSeeResponseCodeIsSuccessful()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeResponseCodeIsSuccessful', func_get_args()));
     }
     /**
@@ -2514,7 +2616,8 @@ trait FunctionalTesterActions
      * Checks that the response code 2xx
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsSuccessful()
      */
-    public function seeResponseCodeIsSuccessful() {
+    public function seeResponseCodeIsSuccessful()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeResponseCodeIsSuccessful', func_get_args()));
     }
 
@@ -2526,7 +2629,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsRedirection()
      */
-    public function canSeeResponseCodeIsRedirection() {
+    public function canSeeResponseCodeIsRedirection()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeResponseCodeIsRedirection', func_get_args()));
     }
     /**
@@ -2535,7 +2639,8 @@ trait FunctionalTesterActions
      * Checks that the response code 3xx
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsRedirection()
      */
-    public function seeResponseCodeIsRedirection() {
+    public function seeResponseCodeIsRedirection()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeResponseCodeIsRedirection', func_get_args()));
     }
 
@@ -2547,7 +2652,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsClientError()
      */
-    public function canSeeResponseCodeIsClientError() {
+    public function canSeeResponseCodeIsClientError()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeResponseCodeIsClientError', func_get_args()));
     }
     /**
@@ -2556,7 +2662,8 @@ trait FunctionalTesterActions
      * Checks that the response code is 4xx
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsClientError()
      */
-    public function seeResponseCodeIsClientError() {
+    public function seeResponseCodeIsClientError()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeResponseCodeIsClientError', func_get_args()));
     }
 
@@ -2568,7 +2675,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsServerError()
      */
-    public function canSeeResponseCodeIsServerError() {
+    public function canSeeResponseCodeIsServerError()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeResponseCodeIsServerError', func_get_args()));
     }
     /**
@@ -2577,7 +2685,8 @@ trait FunctionalTesterActions
      * Checks that the response code is 5xx
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIsServerError()
      */
-    public function seeResponseCodeIsServerError() {
+    public function seeResponseCodeIsServerError()
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeResponseCodeIsServerError', func_get_args()));
     }
 
@@ -2599,7 +2708,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
-    public function canSeeInTitle($title) {
+    public function canSeeInTitle($title)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('seeInTitle', func_get_args()));
     }
     /**
@@ -2618,7 +2728,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
-    public function seeInTitle($title) {
+    public function seeInTitle($title)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('seeInTitle', func_get_args()));
     }
 
@@ -2634,7 +2745,8 @@ trait FunctionalTesterActions
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
-    public function cantSeeInTitle($title) {
+    public function cantSeeInTitle($title)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\ConditionalAssertion('dontSeeInTitle', func_get_args()));
     }
     /**
@@ -2647,7 +2759,8 @@ trait FunctionalTesterActions
      * @return mixed
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
-    public function dontSeeInTitle($title) {
+    public function dontSeeInTitle($title)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Assertion('dontSeeInTitle', func_get_args()));
     }
 
@@ -2671,7 +2784,8 @@ trait FunctionalTesterActions
      * @param string $name
      * @see \Codeception\Lib\InnerBrowser::switchToIframe()
      */
-    public function switchToIframe($name) {
+    public function switchToIframe($name)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('switchToIframe', func_get_args()));
     }
 
@@ -2684,7 +2798,8 @@ trait FunctionalTesterActions
      * @param int $numberOfSteps (default value 1)
      * @see \Codeception\Lib\InnerBrowser::moveBack()
      */
-    public function moveBack($numberOfSteps = null) {
+    public function moveBack($numberOfSteps = null)
+    {
         return $this->getScenario()->runStep(new \Codeception\Step\Action('moveBack', func_get_args()));
     }
 }

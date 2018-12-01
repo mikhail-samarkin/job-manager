@@ -1,6 +1,7 @@
 <?php namespace common\services;
 
-
+use app\common\dispatchers\DummyEventDispatcher;
+use app\common\repositories\ARVacancyRepository;
 use app\common\services\VacancyService;
 use app\tests\fixtures\VacancyFixture;
 
@@ -40,7 +41,10 @@ class VacancyServiceTest extends \Codeception\Test\Unit
         $this->assertContains('Description first vacancy', $vacancy['description']);
     }
 
-    private function getVacancyService() {
-        return new VacancyService();
+    private function getVacancyService()
+    {
+        $vacancyRepository = new ARVacancyRepository();
+        $eventDispatcher = new DummyEventDispatcher();
+        return new VacancyService($vacancyRepository, $eventDispatcher);
     }
 }
