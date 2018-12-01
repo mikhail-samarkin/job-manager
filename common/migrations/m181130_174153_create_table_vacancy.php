@@ -14,14 +14,12 @@ class m181130_174153_create_table_vacancy extends Migration
      */
     public function safeUp()
     {
-
         $this->db->createCommand('CREATE SCHEMA job')->execute();
 
         $this->createTable('{{%job.vacancy}}', [
-            'id'            => $this->primaryKey(),
+            'id'            => $this->char(36)->notNull(),
             'title'         => $this->string(255)->notNull(),
             'description'   => $this->string(1000)->notNull(),
-            'company_id'    => $this->integer()->notNull()
         ]);
     }
 
@@ -36,5 +34,4 @@ class m181130_174153_create_table_vacancy extends Migration
 
         return true;
     }
-
 }
