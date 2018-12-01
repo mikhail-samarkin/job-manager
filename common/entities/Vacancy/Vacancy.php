@@ -32,12 +32,14 @@ class Vacancy extends ActiveRecord implements AggregateRoot
         parent::__construct();
     }
 
-    public function changeTitle($title) {
+    public function changeTitle($title)
+    {
         $this->title = $title;
         $this->recordEvent(new Events\VacancyTitleChanged($this->id, $this->title));
     }
 
-    public function changeDescription($description) {
+    public function changeDescription($description)
+    {
         $this->description = $description;
         $this->recordEvent(new Events\VacancyDescriptionChanged($this->id, $this->description));
     }
@@ -75,5 +77,4 @@ class Vacancy extends ActiveRecord implements AggregateRoot
     {
         return ['id'];
     }
-
 }

@@ -1,7 +1,6 @@
 <?php
 namespace app\common\entities;
 
-
 trait EventTrait
 {
     private $events = [];

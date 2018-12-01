@@ -5,5 +5,4 @@ use app\common\entities\Id;
 
 class VacancyId extends Id
 {
-
 }

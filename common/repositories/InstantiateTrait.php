@@ -1,7 +1,6 @@
 <?php
 namespace app\common\repositories;
 
-
 trait InstantiateTrait
 {
     private static $_instance;

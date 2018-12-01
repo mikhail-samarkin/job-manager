@@ -28,7 +28,7 @@ class VacancyService
         $count = rand(10, 100);
         $faker = \Faker\Factory::create();
 
-        for($i = 0; $i < $count; $i++) {
+        for ($i = 0; $i < $count; $i++) {
             $title = $faker->title;
             $description = $faker->text;
             $vacancy = new Vacancy($this->vacancyRepository->nextId(), $title, $description);
