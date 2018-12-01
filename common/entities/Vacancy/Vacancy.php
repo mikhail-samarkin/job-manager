@@ -6,6 +6,14 @@ use app\common\entities\EventTrait;
 use app\common\repositories\InstantiateTrait;
 use yii\db\ActiveRecord;
 
+/**
+ * Class Vacancy
+ *
+ * @property string $id
+ * @property string $title
+ * @property string $description
+ * @package app\common\entities\Vacancy
+ */
 class Vacancy extends ActiveRecord implements AggregateRoot
 {
     use EventTrait, InstantiateTrait;
