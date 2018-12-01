@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\api\controllers;
 
+use app\common\entities\Vacancy\Vacancy;
 use app\common\services\VacancyService;
 use yii\base\Module;
 
@@ -17,6 +18,7 @@ class VacancyController extends \yii\web\Controller
     public function actionAll()
     {
         $vacancies = $this->service->getPreparedVacancies();
+
         return ['vacancies'  => $vacancies];
     }
 
