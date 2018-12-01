@@ -20,7 +20,7 @@ interface VacancyRepository
 
     public function remove(Vacancy $vacancy): void;
 
-    public function all(): array;
+    public function getAll(): array;
 
     public function nextId(): VacancyId;
 }

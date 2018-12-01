@@ -3,7 +3,6 @@ namespace app\common\services;
 
 use app\common\dispatchers\EventDispatcher;
 use app\common\entities\Vacancy\Vacancy;
-use app\common\entities\Vacancy\VacancyId;
 use app\common\repositories\VacancyRepository;
 
 class VacancyService
@@ -19,8 +18,21 @@ class VacancyService
 
     public function getPreparedVacancies()
     {
-        $vacancies = $this->vacancyRepository->all();
-        return $vacancies;
+        /**
+         * @var Vacancy[] $vacancies
+         */
+        $vacancies = $this->vacancyRepository->getAll();
+
+        $finishVacancies = [];
+        foreach ($vacancies as $vacancy) {
+            $finishVacancies [] = [
+                'id'            => $vacancy->id,
+                'title'         => $vacancy->title,
+                'description'   => $vacancy->description
+            ];
+        }
+
+        return $finishVacancies;
     }
 
     public function generateRandomVacancies()

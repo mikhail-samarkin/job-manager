@@ -66,9 +66,9 @@ class ARVacancyRepository implements VacancyRepository
         return new VacancyId(Uuid::uuid4()->toString());
     }
 
-    public function all(): array
+    public function getAll(): array
     {
-        $vacancies = Vacancy::find()->asArray()->all();
+        $vacancies = Vacancy::find()->all();
         return $vacancies;
     }
 }
