@@ -5,5 +5,5 @@ use yii\test\ActiveFixture;
 
 class VacancyFixture extends ActiveFixture
 {
-    public $modelClass = 'app\common\entities\Vacancy\Vacancy';
+    public $modelClass = 'app\common\entities\Vacancy';
 }
