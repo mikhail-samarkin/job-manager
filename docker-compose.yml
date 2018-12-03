@@ -19,6 +19,9 @@ services:
     - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
     - app-network
+    depends_on:
+    - db
+    - webserver
 
   #Nginx Service
   webserver:
@@ -30,7 +33,7 @@ services:
     - "80:80"
     - "443:443"
     volumes:
-    - ./:/var/www/web
+    - ./:/var/www/
     - ./docker/nginx/cert:/etc/ssl/certs
     - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
@@ -47,6 +50,10 @@ services:
       POSTGRES_DB: job_manager
       POSTGRES_PASSWORD: job_manager
       POSTGRES_USER: job_manager
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - app-network
 
 #Docker Networks
 networks:
