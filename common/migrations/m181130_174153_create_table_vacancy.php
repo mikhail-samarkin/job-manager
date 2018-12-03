@@ -17,7 +17,7 @@ class m181130_174153_create_table_vacancy extends Migration
         $this->db->createCommand('CREATE SCHEMA job')->execute();
 
         $this->createTable('{{%job.vacancy}}', [
-            'id'            => $this->char(36)->notNull(),
+            'id'            => $this->primaryKey(),
             'title'         => $this->string(255)->notNull(),
             'description'   => $this->string()->notNull(),
         ]);

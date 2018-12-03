@@ -20,8 +20,4 @@ return [
             'class' => 'app\console\controllers\EnvironmentController'
         ],
     ],
-    'bootstrap' => [
-        'log',
-        'app\bootstrap\ContainerBootstrap',
-    ],
 ];

@@ -24,8 +24,4 @@ return [
             'class' => 'app\modules\api\ApiModule'
         ]
     ],
-    'bootstrap' => [
-        'log',
-        'app\bootstrap\ContainerBootstrap',
-    ],
 ];
