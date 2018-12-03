@@ -1,0 +1,33 @@
+<?php
+
+$environment = isset($argv[1]) && !empty($argv[1]) ? $argv[1] : 'dev';
+$overwrite = isset($argv[2]) && !empty($argv[2]) ? $argv[2] : 'y';
+
+$pathFrom = __DIR__.'/environments/'.$environment.'/config/serv.env';
+$pathTo =  __DIR__.'/config/serv.env';
+
+if (!is_writable(dirname($pathTo))) {
+    echo 'Folder '.dirname($pathTo).' not writable!';
+    echo 'Initiate application error!';
+    exit();
+}
+
+if (file_exists($pathTo) && $overwrite === 'n') {
+    echo 'File with environment config is exist!';
+    echo 'Initiate application error!';
+    exit();
+}
+
+try {
+    $result = copy($pathFrom, $pathTo);
+
+    if (!$result) {
+        throw new ErrorException('Copy not completed');
+    }
+} catch (ErrorException $e) {
+    echo $e->getMessage();
+    echo 'Initiate application error!';
+    exit;
+}
+
+echo 'Initiate application success';
