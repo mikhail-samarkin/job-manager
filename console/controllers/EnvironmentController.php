@@ -4,6 +4,10 @@ namespace app\console\controllers;
 use yii\base\ErrorException;
 use yii\helpers\Console;
 
+/**
+ * Class EnvironmentController
+ * @package app\console\controllers
+ */
 class EnvironmentController extends \yii\console\Controller
 {
     /**
@@ -11,8 +15,8 @@ class EnvironmentController extends \yii\console\Controller
      * @param string $environment
      * @param string $overwrite
      */
-    public function actionInit($environment = 'dev', $overwrite = 'y') {
-
+    public function actionInit($environment = 'dev', $overwrite = 'y')
+    {
         $pathFrom = \Yii::$app->basePath.'/environments/'.$environment.'/config/serv.env';
         $pathTo = \Yii::$app->basePath.'/config/serv.env';
 

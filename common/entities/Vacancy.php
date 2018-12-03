@@ -13,6 +13,9 @@ use yii\db\ActiveRecord;
  */
 class Vacancy extends ActiveRecord
 {
+    /**
+     * @return string
+     */
     public static function tableName(): string
     {
         return '{{%job.vacancy}}';
