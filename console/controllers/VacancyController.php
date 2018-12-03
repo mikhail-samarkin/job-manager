@@ -22,7 +22,7 @@ class VacancyController extends \yii\console\Controller
     /**
      * Generate random vacancies
      */
-    public function actionGenerate()
+    public function actionGenerate() : void
     {
         $count = $this->vacancyService->generateRandomVacancies();
         Console::output('Generated '.$count.' vacancies');
