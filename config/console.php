@@ -16,8 +16,5 @@ return [
         'vacancy'   => [
             'class' => 'app\console\controllers\VacancyController'
         ],
-        'environment'   => [
-            'class' => 'app\console\controllers\EnvironmentController'
-        ],
     ],
 ];
