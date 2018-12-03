@@ -24,15 +24,16 @@ class VacancyServiceTest extends \Codeception\Test\Unit
     /**
      * @dataProvider getPreparedVacanciesProvider
      * @param $page
+     * @param $expectedCount
      */
-    public function testGetPreparedVacancies($page)
+    public function testGetPreparedVacancies($page, $expectedCount)
     {
         $vacancyService = $this->getVacancyService();
 
         $vacancies = $vacancyService->getPreparedVacancies($page);
 
         $this->assertTrue(is_array($vacancies));
-        $this->assertCount(1, $vacancies);
+        $this->assertCount($expectedCount, $vacancies);
         $vacancy = array_shift($vacancies);
         $this->assertArrayHasKey('title', $vacancy);
         $this->assertArrayHasKey('description', $vacancy);
@@ -45,7 +46,7 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      */
     public function getPreparedVacanciesProvider() {
         return [
-            [1]
+            [1, 10]
         ];
     }
 
