@@ -9,7 +9,7 @@ class VacancyController extends \yii\console\Controller
 {
     private $vacancyService;
 
-    public function __construct(string $id, Module $module, array $config = [], VacancyService $vacancyService)
+    public function __construct(string $id, Module $module, VacancyService $vacancyService, array $config = [])
     {
         $this->vacancyService = $vacancyService;
         parent::__construct($id, $module, $config);
