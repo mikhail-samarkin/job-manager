@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
 namespace app\common\dto;
 
 /**
- * Class VacancyDto
+ * Class VacancyDto contains fields Vacancy object
+ *
  * @package app\common\dto
  */
 class VacancyDto
@@ -23,6 +25,8 @@ class VacancyDto
     private $description;
 
     /**
+     * Get identificator Vacancy
+     *
      * @return int
      */
     public function getId(): int
@@ -31,6 +35,8 @@ class VacancyDto
     }
 
     /**
+     * Get title Vacancy
+     *
      * @return string
      */
     public function getTitle(): string
@@ -39,6 +45,8 @@ class VacancyDto
     }
 
     /**
+     * Set title Vacancy
+     *
      * @param string $title
      * @return VacancyDto
      */
@@ -50,6 +58,8 @@ class VacancyDto
     }
 
     /**
+     * Get description Vacancy
+     *
      * @return string
      */
     public function getDescription(): string
@@ -58,6 +68,8 @@ class VacancyDto
     }
 
     /**
+     * Set description Vacancy
+     *
      * @param string $description
      * @return VacancyDto
      */

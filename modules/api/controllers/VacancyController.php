@@ -1,9 +1,15 @@
 <?php
+declare(strict_types=1);
 namespace app\modules\api\controllers;
 
 use app\common\services\VacancyService;
 use yii\base\Module;
 
+/**
+ * Class contains public api for getting, add and change Vacancy object
+ *
+ * @package app\modules\api\controllers
+ */
 class VacancyController extends \yii\web\Controller
 {
     protected $service;
@@ -14,7 +20,15 @@ class VacancyController extends \yii\web\Controller
         parent::__construct($id, $module, $config);
     }
 
-    public function actionIndex()
+    /**
+     * Get list vacancies
+     *
+     * @GET
+     *  int page - number page
+     *
+     * @return array
+     */
+    public function actionIndex(): array
     {
         $page = \Yii::$app->request->get('page');
 
@@ -25,6 +39,9 @@ class VacancyController extends \yii\web\Controller
         return ['vacancies'  => $vacancies];
     }
 
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [

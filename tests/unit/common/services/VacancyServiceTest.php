@@ -1,10 +1,16 @@
 <?php
+declare(strict_types=1);
 namespace app\tests\unit\common\services;
 
 use app\common\builders\VacancyBuilder;
 use app\common\services\VacancyService;
 use app\tests\fixtures\VacancyFixture;
 
+/**
+ * Class VacancyServiceTest contains test methods VacancyService
+ *
+ * @package app\tests\unit\common\services
+ */
 class VacancyServiceTest extends \Codeception\Test\Unit
 {
     /**
@@ -12,22 +18,25 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      */
     protected $tester;
     
-    protected function _before()
+    protected function _before(): void
     {
         $this->tester->haveFixtures([
             'user' => [
-                'class' => VacancyFixture::class,
-                'dataFile' => codecept_data_dir() . 'vacancy.php'
+                'class'     => VacancyFixture::class,
+                'dataFile'  => codecept_data_dir() . 'vacancy.php'
             ]
         ]);
     }
 
     /**
+     * Test method getPreparedVacancies
+     *
+     * @param $page - number page
+     * @param $expectedCount - count vacancies on output
+     *
      * @dataProvider getPreparedVacanciesProvider
-     * @param $page
-     * @param $expectedCount
      */
-    public function testGetPreparedVacancies($page, $expectedCount)
+    public function testGetPreparedVacancies($page, $expectedCount): void
     {
         $vacancyService = $this->getVacancyService();
 
@@ -43,9 +52,11 @@ class VacancyServiceTest extends \Codeception\Test\Unit
     }
 
     /**
+     * Provider for testGetPreparedVacancies
+     *
      * @return array
      */
-    public function getPreparedVacanciesProvider()
+    public function getPreparedVacanciesProvider(): array
     {
         $page = 1;
         $expectedCount = 10;
@@ -57,9 +68,11 @@ class VacancyServiceTest extends \Codeception\Test\Unit
 
 
     /**
+     * Get Vacancy Service object
+     *
      * @return VacancyService
      */
-    private function getVacancyService()
+    private function getVacancyService(): VacancyService
     {
         $vacancyBuilder = new VacancyBuilder();
         return new VacancyService($vacancyBuilder);

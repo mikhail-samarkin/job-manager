@@ -1,20 +1,24 @@
 <?php
+declare(strict_types=1);
 namespace app\common\entities;
 
 use yii\db\ActiveRecord;
 
 /**
- * Class Vacancy
+ * Class Active Record: Vacancy
  *
  * @property int $id
  * @property string $title
  * @property string $description
+ *
  * @package app\common\entities\Vacancy
  */
 class Vacancy extends ActiveRecord
 {
     /**
-     * @return string
+     * Table storage vacancies
+     *
+     * @inheritdoc
      */
     public static function tableName(): string
     {

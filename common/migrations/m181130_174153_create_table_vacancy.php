@@ -1,10 +1,14 @@
 <?php
+declare(strict_types=1);
 namespace app\common\migrations;
 
 use yii\db\Migration;
 
 /**
  * Class m181130_174153_create_table_vacancy
+ *
+ * Migration create table storage vacancies AND schema for table
+ *
  */
 class m181130_174153_create_table_vacancy extends Migration
 {
@@ -12,7 +16,7 @@ class m181130_174153_create_table_vacancy extends Migration
      * {@inheritdoc}
      * @throws \yii\db\Exception
      */
-    public function safeUp()
+    public function safeUp(): void
     {
         $this->db->createCommand('CREATE SCHEMA job')->execute();
 
@@ -27,7 +31,7 @@ class m181130_174153_create_table_vacancy extends Migration
      * {@inheritdoc}
      * @throws \yii\db\Exception
      */
-    public function safeDown() : bool
+    public function safeDown(): bool
     {
         $this->dropTable('{{%job.vacancy}}');
 
