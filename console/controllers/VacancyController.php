@@ -5,6 +5,10 @@ use app\common\services\VacancyService;
 use yii\base\Module;
 use yii\helpers\Console;
 
+/**
+ * Class VacancyController
+ * @package app\console\controllers
+ */
 class VacancyController extends \yii\console\Controller
 {
     private $vacancyService;
@@ -18,7 +22,8 @@ class VacancyController extends \yii\console\Controller
     /**
      * Generate random vacancies
      */
-    public function actionGenerate() {
+    public function actionGenerate()
+    {
         $count = $this->vacancyService->generateRandomVacancies();
         Console::output('Generated '.$count.' vacancies');
     }

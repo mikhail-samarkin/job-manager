@@ -1,13 +1,38 @@
 <?php
 namespace app\common\services;
 
+use app\common\builders\VacancyBuilder;
+use app\common\dto\VacancyDto;
 use app\common\entities\Vacancy;
 
+/**
+ * Class VacancyService
+ * @package app\common\services
+ */
 class VacancyService
 {
-    public function getPreparedVacancies()
+    private $vacancyBuilder;
+
+    public function __construct(VacancyBuilder $vacancyBuilder)
     {
-        $vacancies = Vacancy::find()->asArray()->all();
+        $this->vacancyBuilder = $vacancyBuilder;
+    }
+
+    /**
+     * @param $page
+     * @return array
+     */
+    public function getPreparedVacancies($page)
+    {
+        $perPage = 10;
+
+        $offset = ($page - 1) * $perPage;
+
+        $vacancies = Vacancy::find()
+            ->limit($perPage)
+            ->offset($offset)
+            ->asArray()
+            ->all();
 
         return $vacancies;
     }
@@ -21,14 +46,16 @@ class VacancyService
         $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < $count; $i++) {
-            $title = $faker->title;
+            $title = $faker->name;
             $description = $faker->text;
 
-            $vacancy = new Vacancy();
-            $vacancy->title = $title;
-            $vacancy->description = $description;
-            $vacancy->save();
+            $vacancyDto = (new VacancyDto())
+                ->setTitle($title)
+                ->setDescription($description);
 
+            $vacancy = $this->vacancyBuilder->buildVacancy($vacancyDto);
+
+            $vacancy->save();
         }
 
         return $count;

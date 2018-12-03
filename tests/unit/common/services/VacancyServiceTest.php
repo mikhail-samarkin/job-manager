@@ -1,7 +1,6 @@
 <?php namespace common\services;
 
-use app\common\dispatchers\DummyEventDispatcher;
-use app\common\repositories\ARVacancyRepository;
+use app\common\builders\VacancyBuilder;
 use app\common\services\VacancyService;
 use app\tests\fixtures\VacancyFixture;
 
@@ -22,15 +21,15 @@ class VacancyServiceTest extends \Codeception\Test\Unit
         ]);
     }
 
-    protected function _after()
-    {
-    }
-
-    public function testGetPreparedVacancies()
+    /**
+     * @dataProvider getPreparedVacanciesProvider
+     * @param $page
+     */
+    public function testGetPreparedVacancies($page)
     {
         $vacancyService = $this->getVacancyService();
 
-        $vacancies = $vacancyService->getPreparedVacancies();
+        $vacancies = $vacancyService->getPreparedVacancies($page);
 
         $this->assertTrue(is_array($vacancies));
         $this->assertCount(1, $vacancies);
@@ -41,10 +40,21 @@ class VacancyServiceTest extends \Codeception\Test\Unit
         $this->assertContains('Description first vacancy', $vacancy['description']);
     }
 
+    /**
+     * @return array
+     */
+    public function getPreparedVacanciesProvider() {
+        return [
+            [1]
+        ];
+    }
+
+    /**
+     * @return VacancyService
+     */
     private function getVacancyService()
     {
-        $vacancyRepository = new ARVacancyRepository();
-        $eventDispatcher = new DummyEventDispatcher();
-        return new VacancyService($vacancyRepository, $eventDispatcher);
+        $vacancyBuilder = new VacancyBuilder();
+        return new VacancyService($vacancyBuilder);
     }
 }
