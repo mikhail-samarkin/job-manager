@@ -1,13 +1,59 @@
-version: '2'
+version: '3'
+
 services:
-  codecept:
-    image: testing/codeception/codeception
-    build: ..
-    working_dir: /repo
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    #image: php:7.1-fpm
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
     volumes:
-      - ../tests:/repo/tests
-      - ../codeception.yml:/repo/codeception.yml
-      - ../src:/repo/src
-      - ../shim.php:/repo/shim.php
-  #redis:
-  #  image: redis:3
+    - ./:/var/www/
+    - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+    - app-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - ./:/var/www/web
+    - ./docker/nginx/cert:/etc/ssl/certs
+    - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+    - app-network
+
+  #PostgreSQL Service
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_DB: job_manager
+      POSTGRES_PASSWORD: job_manager
+      POSTGRES_USER: job_manager
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
