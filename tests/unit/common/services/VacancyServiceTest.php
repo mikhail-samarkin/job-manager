@@ -45,7 +45,8 @@ class VacancyServiceTest extends \Codeception\Test\Unit
     /**
      * @return array
      */
-    public function getPreparedVacanciesProvider() {
+    public function getPreparedVacanciesProvider()
+    {
         $page = 1;
         $expectedCount = 10;
         return [

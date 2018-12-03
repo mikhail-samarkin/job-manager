@@ -27,13 +27,15 @@ class VacancyServiceTest extends \Codeception\Test\Unit
         $this->assertTrue($vacancy instanceof Vacancy);
     }
 
-    public function buildVacancyProvider() {
+    public function buildVacancyProvider()
+    {
         return [
             ['title', 'description']
         ];
     }
 
-    private function getVacancyBuilder() {
+    private function getVacancyBuilder()
+    {
         return new VacancyBuilder();
     }
 }
