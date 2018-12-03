@@ -1,6 +1,10 @@
 <?php
 namespace app\common\dto;
 
+/**
+ * Class VacancyDto
+ * @package app\common\dto
+ */
 class VacancyDto
 {
     /**

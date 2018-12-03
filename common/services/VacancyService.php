@@ -19,10 +19,12 @@ class VacancyService
     }
 
     /**
+     * Get array vacancies
+     *
      * @param $page
      * @return array
      */
-    public function getPreparedVacancies($page)
+    public function getPreparedVacancies($page) : array
     {
         $perPage = 10;
 
@@ -38,9 +40,11 @@ class VacancyService
     }
 
     /**
+     * Generate random vacancies from 10 to 100 count
+     *
      * @return int
      */
-    public function generateRandomVacancies()
+    public function generateRandomVacancies() : int
     {
         $count = rand(10, 100);
         $faker = \Faker\Factory::create();

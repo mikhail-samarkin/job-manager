@@ -5,7 +5,7 @@ COMPOSER = $(DC) exec app composer
 
 ##help			Shows this help
 help:
-	@cat makefile | grep "##." | sed '2d;s/##//;s/://'
+	@cat Makefile | grep "##." | sed '2d;s/##//;s/://'
 
 ##install			Initial setup of application with autostarting containers
 install: dhparam cert up composer init migrate generate-vacancy
@@ -18,11 +18,11 @@ stop: down
 
 ##migrate			Run migrations
 migrate:
-	$(DC) exec app php yii migrate
+	$(DC) exec app php yii migrate --interactive=0
 
-##init			Run migrations
+##init			Init application
 init:
-	$(DC) exec app php yii environment/init
+	$(DC) exec app php initialization
 
 ##generate-vacancy			Run migrations
 generate-vacancy:

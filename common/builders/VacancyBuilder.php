@@ -6,9 +6,16 @@ use app\common\entities\Vacancy;
 
 class VacancyBuilder
 {
-    public function buildVacancy(VacancyDto $vacancyDto)
+    /**
+     * Build Vacancy from VacancyDto
+     *
+     * @param VacancyDto $vacancyDto
+     * @return Vacancy
+     */
+    public function buildVacancy(VacancyDto $vacancyDto) : Vacancy
     {
         $vacancy = new Vacancy();
+
         $vacancy->title = $vacancyDto->getTitle();
         $vacancy->description = $vacancyDto->getDescription();
 
