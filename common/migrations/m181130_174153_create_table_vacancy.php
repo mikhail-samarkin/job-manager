@@ -25,6 +25,7 @@ class m181130_174153_create_table_vacancy extends Migration
 
     /**
      * {@inheritdoc}
+     * @throws \yii\db\Exception
      */
     public function safeDown()
     {
