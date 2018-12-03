@@ -19,7 +19,7 @@ class m181130_174153_create_table_vacancy extends Migration
         $this->createTable('{{%job.vacancy}}', [
             'id'            => $this->char(36)->notNull(),
             'title'         => $this->string(255)->notNull(),
-            'description'   => $this->string(1000)->notNull(),
+            'description'   => $this->string()->notNull(),
         ]);
     }
 
