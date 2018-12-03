@@ -1,4 +1,5 @@
-<?php namespace common\services;
+<?php
+namespace app\tests\unit\common\services;
 
 use app\common\builders\VacancyBuilder;
 use app\common\services\VacancyService;
@@ -45,10 +46,14 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      * @return array
      */
     public function getPreparedVacanciesProvider() {
+        $page = 1;
+        $expectedCount = 10;
         return [
-            [1, 10]
+            [$page, $expectedCount]
         ];
     }
+
+
 
     /**
      * @return VacancyService
