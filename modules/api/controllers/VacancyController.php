@@ -16,7 +16,7 @@ class VacancyController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        $page = \Yii::$app->request->post('page');
+        $page = \Yii::$app->request->get('page');
 
         is_null($page) && $page = 1;
 
