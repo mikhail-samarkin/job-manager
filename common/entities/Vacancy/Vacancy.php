@@ -1,6 +1,7 @@
 <?php
 namespace app\common\entities\Vacancy;
 
+use app\common\dto\VacancyDto;
 use app\common\entities\AggregateRoot;
 use app\common\entities\EventTrait;
 use app\common\repositories\InstantiateTrait;
@@ -9,7 +10,7 @@ use yii\db\ActiveRecord;
 /**
  * Class Vacancy
  *
- * @property string $id
+ * @property VacancyId $id
  * @property string $title
  * @property string $description
  * @package app\common\entities\Vacancy
@@ -31,11 +32,11 @@ class Vacancy extends ActiveRecord implements AggregateRoot
      */
     private $description;
 
-    public function __construct(VacancyId $id, $title, $description)
+    public function __construct(VacancyDto $vacancyDto)
     {
-        $this->id = $id;
-        $this->title = $title;
-        $this->description = $description;
+        $this->id = $vacancyDto->getId();
+        $this->title = $vacancyDto->getTitle();
+        $this->description = $vacancyDto->getDescription();
         $this->recordEvent(new Events\VacancyCreated($this->id));
         parent::__construct();
     }
@@ -85,4 +86,5 @@ class Vacancy extends ActiveRecord implements AggregateRoot
     {
         return ['id'];
     }
+
 }
