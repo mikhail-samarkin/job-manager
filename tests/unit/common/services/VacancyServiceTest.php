@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace app\tests\unit\common\services;
 
-use app\common\builders\VacancyBuilder;
 use app\common\services\VacancyService;
 use app\tests\fixtures\VacancyFixture;
 
@@ -17,7 +16,10 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      * @var \UnitTester
      */
     protected $tester;
-    
+
+    /**
+     * Connect fixtures vacancy table for tests
+     */
     protected function _before(): void
     {
         $this->tester->haveFixtures([
@@ -65,8 +67,6 @@ class VacancyServiceTest extends \Codeception\Test\Unit
         ];
     }
 
-
-
     /**
      * Get Vacancy Service object
      *
@@ -74,7 +74,6 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      */
     private function getVacancyService(): VacancyService
     {
-        $vacancyBuilder = new VacancyBuilder();
-        return new VacancyService($vacancyBuilder);
+        return new VacancyService();
     }
 }
