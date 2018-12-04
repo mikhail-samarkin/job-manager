@@ -59,9 +59,9 @@ composer:
 down:
 	$(DC) down
 
-##test			Run tests
+##test            Run tests
 test:
-	$(DC) exec app ./vendor/bin/phpunit
+    $(DC) exec app ./vendor/bin/codecept run
 
 ##test-coverage		Run tests with coverage
 test-coverage:
