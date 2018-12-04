@@ -62,3 +62,12 @@ make install
 3. Выполнить команду php yii migrate
 4. Выполнить команду php yii vacancy/generate
 ```
+
+Запуск тестов
+-------------------
+
+
+Для запуска тестов используйте Codeception
+```
+./vendor/bin/codecept run
+```
