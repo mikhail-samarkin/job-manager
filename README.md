@@ -68,7 +68,7 @@ make install
 -------------------
 
 
-Для запуска тестов используйте Codeception
+Для запуска тестов в контейнере используйте Codeception
 ```
 ./vendor/bin/codecept run
 ```
