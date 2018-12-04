@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace app\common\services;
 
-use app\common\builders\VacancyBuilder;
 use app\common\entities\Vacancy;
 
 /**
@@ -12,16 +11,6 @@ use app\common\entities\Vacancy;
  */
 class VacancyService
 {
-    /**
-     * @var VacancyBuilder
-     */
-    private $vacancyBuilder;
-
-    public function __construct(VacancyBuilder $vacancyBuilder)
-    {
-        $this->vacancyBuilder = $vacancyBuilder;
-    }
-
     /**
      * Get array vacancies
      *

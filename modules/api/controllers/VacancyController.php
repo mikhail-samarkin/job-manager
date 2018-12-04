@@ -12,8 +12,21 @@ use yii\base\Module;
  */
 class VacancyController extends \yii\web\Controller
 {
+    /**
+     * @var VacancyService
+     */
     protected $service;
 
+    /**
+     * VacancyController constructor.
+     *
+     * Inject VacancyService
+     *
+     * @param $id
+     * @param Module $module
+     * @param VacancyService $vacancyService - service for getting, add and change Vacancy object
+     * @param array $config
+     */
     public function __construct($id, Module $module, VacancyService $vacancyService, array $config = [])
     {
         $this->service = $vacancyService;

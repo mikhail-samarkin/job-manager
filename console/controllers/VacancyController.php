@@ -13,8 +13,21 @@ use yii\helpers\Console;
  */
 class VacancyController extends \yii\console\Controller
 {
+    /**
+     * @var VacancyBuilder
+     */
     private $vacancyBuilder;
 
+    /**
+     * VacancyController constructor.
+     *
+     * Inject VacancyBuilder
+     *
+     * @param string $id
+     * @param Module $module
+     * @param VacancyBuilder $vacancyBuilder - class for create Vacancy object
+     * @param array $config
+     */
     public function __construct(string $id, Module $module, VacancyBuilder $vacancyBuilder, array $config = [])
     {
         $this->vacancyBuilder = $vacancyBuilder;
