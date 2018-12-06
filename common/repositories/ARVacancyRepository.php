@@ -24,9 +24,7 @@ class ARVacancyRepository implements VacancyRepositoryInterface
      */
     public function get(int $id): VacancyDto
     {
-        if (!$vacancy = Vacancy::findOne($id)) {
-            throw new NotFoundException('Vacancy not found.');
-        }
+        $vacancy = $this->firstOrFail($id);
 
         /**
          * @var DateTime $dateCreate
@@ -70,9 +68,7 @@ class ARVacancyRepository implements VacancyRepositoryInterface
      */
     public function save(VacancyDto $vacancyDto): void
     {
-        if (!$vacancy = Vacancy::findOne($vacancyDto->getId())) {
-            throw new NotFoundException('Vacancy not found.');
-        }
+        $vacancy = $this->firstOrFail($vacancyDto->getId());
 
         $vacancy->title = $vacancyDto->getTitle();
         $vacancy->description = $vacancyDto->getDescription();
@@ -91,9 +87,7 @@ class ARVacancyRepository implements VacancyRepositoryInterface
      */
     public function remove(VacancyDto $vacancyDto): void
     {
-        if (!$vacancy = Vacancy::findOne($vacancyDto->getId())) {
-            throw new NotFoundException('Vacancy not found.');
-        }
+        $vacancy = $this->firstOrFail($vacancyDto->getId());
 
         if (!$vacancy->delete()) {
             throw new RuntimeException('Removing error.');
@@ -129,5 +123,19 @@ class ARVacancyRepository implements VacancyRepositoryInterface
         }
 
         return $vacanciesDto;
+    }
+
+    /**
+     * @param int $id
+     * @return Vacancy|null
+     * @throws NotFoundException
+     */
+    private function firstOrFail(int $id)
+    {
+        if (!$vacancy = Vacancy::findOne($id)) {
+            throw new NotFoundException('Vacancy not found.');
+        }
+
+        return $vacancy;
     }
 }
