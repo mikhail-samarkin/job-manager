@@ -4,19 +4,23 @@ namespace app\console\controllers;
 
 use app\common\builders\VacancyBuilder;
 use app\common\dto\VacancyDto;
+use app\common\repositories\VacancyRepositoryInterface;
+use Exception;
+use Faker\Factory;
 use yii\base\Module;
+use yii\console\Controller;
 use yii\helpers\Console;
 
 /**
  * Class VacancyController
  * @package app\console\controllers
  */
-class VacancyController extends \yii\console\Controller
+class VacancyController extends Controller
 {
     /**
-     * @var VacancyBuilder
+     * @var VacancyRepositoryInterface
      */
-    private $vacancyBuilder;
+    private $repository;
 
     /**
      * VacancyController constructor.
@@ -25,12 +29,12 @@ class VacancyController extends \yii\console\Controller
      *
      * @param string $id
      * @param Module $module
-     * @param VacancyBuilder $vacancyBuilder - class for create Vacancy object
+     * @param VacancyRepositoryInterface $repository
      * @param array $config
      */
-    public function __construct(string $id, Module $module, VacancyBuilder $vacancyBuilder, array $config = [])
+    public function __construct(string $id, Module $module, VacancyRepositoryInterface $repository, array $config = [])
     {
-        $this->vacancyBuilder = $vacancyBuilder;
+        $this->repository = $repository;
         parent::__construct($id, $module, $config);
     }
 
@@ -51,19 +55,21 @@ class VacancyController extends \yii\console\Controller
     private function generateRandomVacancies(): int
     {
         $count = rand(10, 100);
-        $faker = \Faker\Factory::create();
+        $faker = Factory::create();
 
         for ($i = 0; $i < $count; $i++) {
             $title = $faker->name;
             $description = $faker->text;
 
-            $vacancyDto = (new VacancyDto())
-                ->setTitle($title)
-                ->setDescription($description);
+            try {
+                $vacancyDto = (new VacancyDto())
+                    ->setTitle($title)
+                    ->setDescription($description);
+            } catch (Exception $e) {
+                continue;
+            }
 
-            $vacancy = $this->vacancyBuilder->buildVacancy($vacancyDto);
-
-            $vacancy->save();
+            $this->repository->add($vacancyDto);
         }
 
         return $count;

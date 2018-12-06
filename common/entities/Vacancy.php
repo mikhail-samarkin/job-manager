@@ -10,6 +10,7 @@ use yii\db\ActiveRecord;
  * @property int $id
  * @property string $title
  * @property string $description
+ * @property int $date_create
  *
  * @package app\common\entities\Vacancy
  */

@@ -1,6 +1,6 @@
 {
     "require": {
-        "php": ">=7.2.0",
+        "php": ">=7.3.0",
         "yiisoft/yii2": "^2.0.15",
         "friendsofphp/php-cs-fixer": "^2.13",
         "fzaninotto/faker": "^1.8",

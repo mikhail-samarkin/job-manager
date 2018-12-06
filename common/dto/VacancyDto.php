@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace app\common\dto;
 
+use DateTime;
+
 /**
  * Class VacancyDto contains fields Vacancy object
  *
@@ -25,6 +27,20 @@ class VacancyDto
     private $description;
 
     /**
+     * @var DateTime $dateCreate
+     */
+    private $dateCreate;
+
+    /**
+     * VacancyDto constructor.
+     * @throws \Exception
+     */
+    public function __construct()
+    {
+        $this->dateCreate = new DateTime();
+    }
+
+    /**
      * Get identificator Vacancy
      *
      * @return int
@@ -32,6 +48,17 @@ class VacancyDto
     public function getId(): int
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return VacancyDto
+     */
+    public function setId(int $id): VacancyDto
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -78,5 +105,37 @@ class VacancyDto
         $this->description = $description;
 
         return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDateCreate(): DateTime
+    {
+        return $this->dateCreate;
+    }
+
+    /**
+     * @param DateTime $createDate
+     * @return VacancyDto
+     */
+    public function setDateCreate(DateTime $createDate): VacancyDto
+    {
+        $this->dateCreate = $createDate;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'id'            => $this->id,
+            'title'         => $this->title,
+            'description'   => $this->description,
+            'date_create'   => $this->dateCreate->format('Y-m-d H:i:s')
+        ];
     }
 }

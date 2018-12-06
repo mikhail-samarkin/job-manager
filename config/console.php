@@ -17,4 +17,8 @@ return [
             'class' => 'app\console\controllers\VacancyController'
         ],
     ],
+    'bootstrap' => [
+        'log',
+        'app\bootstrap\ContainerBootstrap',
+    ],
 ];

@@ -2,7 +2,8 @@
 declare(strict_types=1);
 namespace app\common\services;
 
-use app\common\entities\Vacancy;
+use app\common\dto\VacancyDto;
+use app\common\repositories\VacancyRepositoryInterface;
 
 /**
  * VacancyService contains methods for getting, add and change Vacancy object
@@ -11,6 +12,17 @@ use app\common\entities\Vacancy;
  */
 class VacancyService
 {
+
+    private $repository;
+    /**
+     * VacancyService constructor.
+     * @param VacancyRepositoryInterface $repository
+     */
+    public function __construct(VacancyRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Get array vacancies
      *
@@ -19,15 +31,16 @@ class VacancyService
      */
     public function getPreparedVacancies($page): array
     {
-        $perPage = 10;
+        $limit = 10;
 
-        $offset = ($page - 1) * $perPage;
+        $offset = ($page - 1) * $limit;
 
-        $vacancies = Vacancy::find()
-            ->limit($perPage)
-            ->offset($offset)
-            ->asArray()
-            ->all();
+        /** @var VacancyDto[] $vacancies */
+        $vacancies = $this->repository->all($limit, $offset);
+
+        foreach ($vacancies as &$vacancy) {
+            $vacancy = $vacancy->toArray();
+        }
 
         return $vacancies;
     }
