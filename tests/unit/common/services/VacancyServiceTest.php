@@ -2,9 +2,11 @@
 declare(strict_types=1);
 namespace app\tests\unit\common\services;
 
+use app\common\dto\VacancyDto;
 use app\common\repositories\ARVacancyRepository;
 use app\common\services\VacancyService;
 use app\tests\fixtures\VacancyFixture;
+use DateTime;
 
 /**
  * Class VacancyServiceTest contains test methods VacancyService
@@ -13,23 +15,6 @@ use app\tests\fixtures\VacancyFixture;
  */
 class VacancyServiceTest extends \Codeception\Test\Unit
 {
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
-    /**
-     * Connect fixtures vacancy table for tests
-     */
-    protected function _before(): void
-    {
-        $this->tester->haveFixtures([
-            'user' => [
-                'class'     => VacancyFixture::class,
-                'dataFile'  => codecept_data_dir() . 'vacancy.php'
-            ]
-        ]);
-    }
 
     /**
      * Test method getPreparedVacancies
@@ -37,11 +22,16 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      * @param $page - number page
      * @param $expectedCount - count vacancies on output
      *
+     * @throws \Exception
      * @dataProvider getPreparedVacanciesProvider
      */
     public function testGetPreparedVacancies($page, $expectedCount): void
     {
-        $vacancyService = $this->getVacancyService();
+        $vacancyRepository = $this->getARVacancyRepositoryMock();
+        $vacancyRepository->method('all')
+            ->willReturn($this->getReturnMethodAll());
+
+        $vacancyService = $this->getVacancyService($vacancyRepository);
 
         $vacancies = $vacancyService->getPreparedVacancies($page);
 
@@ -62,19 +52,43 @@ class VacancyServiceTest extends \Codeception\Test\Unit
     public function getPreparedVacanciesProvider(): array
     {
         $page = 1;
-        $expectedCount = 10;
+        $expectedCount = 1;
         return [
             [$page, $expectedCount]
         ];
     }
 
     /**
+     * @return array
+     * @throws \Exception
+     */
+    private function getReturnMethodAll(): array
+    {
+        $vacanciesDto = [];
+        $vacanciesDto [] = (new VacancyDto())
+            ->setTitle('Title first vacancy')
+            ->setDescription('Description first vacancy')
+            ->setDateCreate(DateTime::createFromFormat('U', '1544085689'));
+
+        return $vacanciesDto;
+    }
+
+    /**
      * Get Vacancy Service object
      *
+     * @param ARVacancyRepository $vacancyRepository
      * @return VacancyService
      */
-    private function getVacancyService(): VacancyService
+    private function getVacancyService(ARVacancyRepository $vacancyRepository): VacancyService
     {
-        return new VacancyService(new ARVacancyRepository());
+        return new VacancyService($vacancyRepository);
+    }
+
+    /**
+     * @return \PHPUnit\Framework\MockObject\MockObject
+     */
+    private function getARVacancyRepositoryMock()
+    {
+        return $this->createMock(ARVacancyRepository::class);
     }
 }
