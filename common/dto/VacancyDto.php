@@ -32,6 +32,8 @@ class VacancyDto
     private $dateCreate;
 
     /**
+     * By default, sets $dateCreate as the current date.
+     *
      * VacancyDto constructor.
      * @throws \Exception
      */
@@ -127,6 +129,8 @@ class VacancyDto
     }
 
     /**
+     * Convert this object to array for output
+     *
      * @return array
      */
     public function toArray(): array

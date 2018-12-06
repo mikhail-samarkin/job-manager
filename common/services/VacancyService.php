@@ -12,10 +12,16 @@ use app\common\repositories\VacancyRepositoryInterface;
  */
 class VacancyService
 {
-
+    /**
+     * @var VacancyRepositoryInterface $repository
+     */
     private $repository;
+
     /**
      * VacancyService constructor.
+     *
+     * Inject VacancyRepositoryInterface to service
+     *
      * @param VacancyRepositoryInterface $repository
      */
     public function __construct(VacancyRepositoryInterface $repository)
