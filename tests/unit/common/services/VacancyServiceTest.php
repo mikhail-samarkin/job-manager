@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace app\tests\unit\common\services;
 
+use app\common\repositories\ARVacancyRepository;
 use app\common\services\VacancyService;
 use app\tests\fixtures\VacancyFixture;
 
@@ -44,13 +45,13 @@ class VacancyServiceTest extends \Codeception\Test\Unit
 
         $vacancies = $vacancyService->getPreparedVacancies($page);
 
-        $this->assertTrue(is_array($vacancies));
-        $this->assertCount($expectedCount, $vacancies);
+        static::assertTrue(is_array($vacancies));
+        static::assertCount($expectedCount, $vacancies);
         $vacancy = array_shift($vacancies);
-        $this->assertArrayHasKey('title', $vacancy);
-        $this->assertArrayHasKey('description', $vacancy);
-        $this->assertContains('Title first vacancy', $vacancy['title']);
-        $this->assertContains('Description first vacancy', $vacancy['description']);
+        static::assertArrayHasKey('title', $vacancy);
+        static::assertArrayHasKey('description', $vacancy);
+        static::assertContains('Title first vacancy', $vacancy['title']);
+        static::assertContains('Description first vacancy', $vacancy['description']);
     }
 
     /**
@@ -74,6 +75,6 @@ class VacancyServiceTest extends \Codeception\Test\Unit
      */
     private function getVacancyService(): VacancyService
     {
-        return new VacancyService();
+        return new VacancyService(new ARVacancyRepository());
     }
 }

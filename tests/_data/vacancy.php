@@ -2,58 +2,58 @@
 
 return [
     [
-        'id'            => 1,
         'title'         => 'Title first vacancy',
         'description'   => 'Description first vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 2,
         'title'         => 'Title two vacancy',
         'description'   => 'Description two vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 3,
         'title'         => 'Title three vacancy',
         'description'   => 'Description three vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 4,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 5,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 6,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 7,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 8,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 9,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 10,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
     [
-        'id'            => 11,
         'title'         => 'Title any vacancy',
         'description'   => 'Description any vacancy',
+        'date_create'   => 1544085689
     ],
 ];

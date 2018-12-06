@@ -25,4 +25,14 @@ class Vacancy extends ActiveRecord
     {
         return '{{%job.vacancy}}';
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            ['title', 'string', 'length'    => [0, 255]]
+        ];
+    }
 }

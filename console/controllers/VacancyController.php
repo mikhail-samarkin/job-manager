@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace app\console\controllers;
 
-use app\common\builders\VacancyBuilder;
 use app\common\dto\VacancyDto;
 use app\common\repositories\VacancyRepositoryInterface;
 use Exception;
