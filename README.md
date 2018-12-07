@@ -42,7 +42,7 @@ php yii vacancy/generate
 -------------------
 
 ```
-/api/vacancy/index          получить список всех вакансий в формате JSON
+/api/vacancy/index/v1          получить список всех вакансий в формате JSON
 ```
 
 Запуск приложения
