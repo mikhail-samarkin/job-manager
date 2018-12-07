@@ -3,6 +3,8 @@ declare(strict_types=1);
 namespace app\modules\api\controllers;
 
 use app\common\services\VacancyService;
+use Yii;
+use yii\base\InvalidRouteException;
 use yii\base\Module;
 
 /**
@@ -39,11 +41,17 @@ class VacancyController extends \yii\web\Controller
      * @GET
      *  int page - number page
      *
+     * @param string $version
      * @return array
+     * @throws InvalidRouteException
      */
-    public function actionIndex(): array
+    public function actionIndex($version = 'v1'): array
     {
-        $page = \Yii::$app->request->get('page');
+        if (!in_array($version, ['v1'])) {
+            throw new InvalidRouteException('Version '.$version.' not support');
+        }
+
+        $page = Yii::$app->request->get('page');
 
         is_null($page) && $page = 1;
 

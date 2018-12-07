@@ -6,6 +6,7 @@ use app\common\dto\VacancyDto;
 use app\common\repositories\VacancyRepositoryInterface;
 use Exception;
 use Faker\Factory;
+use Yii;
 use yii\base\Module;
 use yii\console\Controller;
 use yii\helpers\Console;
@@ -65,6 +66,7 @@ class VacancyController extends Controller
                     ->setTitle($title)
                     ->setDescription($description);
             } catch (Exception $e) {
+                Yii::warning('Error create VacancyDto object in console VacancyController');
                 continue;
             }
 

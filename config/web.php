@@ -17,6 +17,9 @@ return [
         'urlManager'    => [
             'enablePrettyUrl'   => true,
             'showScriptName'    => false,
+            'rules' => [
+                'api/<controller>/<action>/<version:v\d+>' => 'api/<controller>/<action>',
+            ],
         ],
     ],
     'modules'   => [
